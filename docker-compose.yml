@@ -1,0 +1,17 @@
+version: '3'
+services:
+  db:
+    image: mysql:5
+    environment:
+      MYSQL_DATABASE: 'iotlab'
+      MYSQL_USER: 'admin'
+      MYSQL_PASSWORD: 'admin'
+      MYSQL_ROOT_PASSWORD: 'root123456789§à13'
+    container_name: iotlab-db
+
+  iotlab:
+    build: iotlab
+    ports:
+      - "25578:8080"
+      - "25579:4848"
+    container_name: iotlab-webserver
