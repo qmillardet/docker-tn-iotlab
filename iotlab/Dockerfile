@@ -27,5 +27,6 @@ RUN cp /home/iotlab/server/lib/bonecp-datasource.xml /usr/local/glassfish4/bin/
 RUN cp /home/iotlab/server/lib/*.jar /usr/local/glassfish4/glassfish/domains/domain1/lib/ext/
 RUN /usr/local/glassfish4/bin/asadmin stop-domain
 COPY entrypoint.sh /home/entrypoint.sh
+COPY data.sql /home/data.sql
 RUN chmod 777 /home/entrypoint.sh
 CMD /usr/local/glassfish4/bin/asadmin start-domain && /home/entrypoint.sh && sleep infinity

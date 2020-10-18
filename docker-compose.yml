@@ -14,4 +14,6 @@ services:
     ports:
       - "25578:8080"
       - "25579:4848"
+    depends_on:
+      - "db"
     container_name: iotlab-webserver
